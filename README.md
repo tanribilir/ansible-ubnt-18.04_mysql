@@ -31,7 +31,7 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - mysql_db 
 
-login_unix_socket: is very important
+**login_unix_socket:** is very important
 ```
           - name: update mysql root password for all root accounts
             mysql_user:
