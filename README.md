@@ -31,6 +31,24 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - mysql_db 
 
+login_unix_socket: is very important
+```
+          - name: update mysql root password for all root accounts
+            mysql_user:
+              name: root
+              host: "{{ item }}"
+              login_unix_socket: /var/run/mysqld/mysqld.sock
+              password: "{{ db_password }}"
+              login_user: root
+              login_password: "{{ db_password }}"
+              check_implicit_admin: yes
+              priv: "*.*:ALL,GRANT"
+            with_items:
+              - 127.0.0.1
+              - ::1
+              - localhost
+```
+
 License
 -------
 
