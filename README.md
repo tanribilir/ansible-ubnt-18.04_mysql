@@ -1,4 +1,4 @@
-MYSQL_DB
+Running MySQL on Ubuntu 18.04
 =========
 
 This ansible role is to deploy MySQL on Ubuntu 18.04
